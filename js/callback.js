@@ -1,4 +1,5 @@
 // FUNÇÕES QUE SERÃO PASSADAS COMO CALLBACK À CLASS GENIUS OU PLAYER
+//test
 
 /* ****** Exibe animação do início do jogo ******
  * function start_animation
