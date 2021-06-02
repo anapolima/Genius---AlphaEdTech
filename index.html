@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.ico" />
+    <title>Genius MyTems</title>
+    <link rel="stylesheet" href="css/structure.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.css">
+    <script src="js/sweetalert.js"></script>
+</head>
+
+<body>
+    <div class="background"><img src="img/bg.gif"></div>
+    <div class="menu">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" id="menu-checkbox-label">
+            <img src="img/bars-solid.svg" class="menu-checkbox-img">
+        </label>
+        <nav>
+            <ul class="menu-lista">
+                <li><button type="button" class="menu-botao" data-botao="como-jogar">Como jogar</button></li>
+                <li><button type="button" class="menu-botao" data-botao="configurar-botoes">Configurar botões</button></li>
+                <li><button type="button" class="menu-botao" data-botao="modos-de-jogo">Modo de jogo</button></li>
+                <li><button type="button" class="menu-botao" data-botao="feedback">Dê seu feedback!</button></li>
+            </ul>
+        </nav>
+        <div class="menu-bkg"></div>
+    </div>
+
+    <div class="modal-container inativo">
+        <div class="modal-bkg"></div>
+        <div class="modal" id="modal">
+            <div><button class="x">&times;</button></div>
+            <div class="inativo" data-modal="como-jogar">
+                <h2>Como jogar GENIUS</h2>
+                <p>Após iniciar uma partida clicando no botão <span class="span-jogar">Jogar</span> o jogo lhe devolverá uma sequência que você deverá repetir pressionando os botões na mesma ordem.</p>
+                <p>A cada rodada o jogo repetirá a sequência e adicionará mais um sinal.</p>
+                <p>Até quando você consegue?</p>
+                <h2>Modos de jogo</h2>
+                <h3>Modo normal:</h3>
+                <p><span>Dificuldades do modo normal</span></p>
+                <p>No modo normal você pode escolher a dificuldade do jogo. Cada dificuldade tem o seguinte número de rodadas:</p>
+                <p><span>Fácil:</span> 7 rodadas</p>
+                <p><span>Médio:</span> 15 rodadas</p>
+                <p><span>Difícil</span> 31 rodadas</p>
+                <h3>Modo strict:</h3>
+                <p>Neste modo você pode jogar indefinidamete. E se errar, sem problemas! Você pode continuar de onde parou</p>
+                <h2>Configurar botões</h2>
+                <p>Caso prefira, você pode escolher 4 botões do teclado para pressionar cada cor do Genius.</p>
+            </div>
+            <div class="inativo" data-modal="modos-de-jogo">
+                <label for="escolher-modo-de-jogo"><h2>Escolha um modo de jogo:</h2></label>
+                <select id="escolher-modo-de-jogo">
+                    <option value="normal"><h3>Normal</h3></option>
+                    <option value="strict"><h3>Strict</h3></option>
+                </select>
+                <label for="escolher-dificuldade"><h2>Escolha a dificuldade:</h2>
+                    
+                <select id="escolher-dificuldade">
+                    <option value="facil"><h3><span>Fácil</span></h3></option>
+                    <option value="medio"><h3><span>Médio</span></h3></option>
+                    <option value="dificil"><h3><span>Difícil</span></h3></option>
+                </select>
+                <br/>
+                <button id="confirmar" class="confirmar" onclick="game_difficult(), game_mode();">Confirmar</button>
+            </div>
+            <div class="inativo" data-modal="configurar-botoes">
+                <h2>Configurar botões</h2>
+                <p>Caso prefira, você pode escolher 4 botões do teclado para pressionar cada cor do Genius</p>
+                <button id="config-keys">Configurar teclas</button>
+                <div id="feedback-keys">
+                    <ul>
+                        <li>
+                            <label>Tecla verde: <input type="text" id="greenInput" readyonly onfocus="capture_key(this.id)" maxlength="1"></label>
+                            <p class="inativo" id="greenDuplicada">Tecla já cadastrada</p>
+                        </li>
+                        <li>
+                            <label>Tecla vermelha: <input type="text" id="redInput" readyonly onfocus="capture_key(this.id)" maxlength="1"></label>
+                            <p class="inativo" id="redDuplicada">Tecla já cadastrada</p>
+                        </li>
+                        <li>
+                            <label>Tecla amarela: <input type="text" id="yellowInput" readyonly onfocus="capture_key(this.id)" maxlength="1"></label>
+                            <p class="inativo" id="yellowDuplicada">Tecla já cadastrada</p>
+                        </li>
+                        <li>
+                            <label>Tecla azul: <input type="text" id="blueInput" readyonly onfocus="capture_key(this.id)" maxlength="1"></label>
+                            <p class="inativo" id="blueDuplicada">Tecla já cadastrada</p>
+                        </li>
+                    </ul>
+                    <button id="confirmarkeys" class="confirmar" onclick="confirm_keys();">Confirmar</button>
+                </div>
+            </div>
+
+            <div class="inativo" data-modal="feedback">
+                <h2>Muito obrigado por jogar!</h2>
+                <p>Essa versão do <span>Genius</span> foi feita pelos Aspirantes a Dev:</p>
+                <ul>
+                    <li><h3 class="equipe">Ana Paula Oliveira </h3><a href="https://www.linkedin.com/in/anapolima/" target="_blank"><img src="img/linkedin-brands.svg" class="linkedin"></a></li>
+                    <li><h3 class="equipe">Diego Novaes </h3><a href="https://www.linkedin.com/in/diego-novaes-9a26b6190/" target="_blank"><img src="img/linkedin-brands.svg" class="linkedin"></a></li>
+                    <li><h3 class="equipe">Tiago Ribeiro </h3><a href="https://www.linkedin.com/in/tiago-ribeiro-263416143/" target="_blank"><img src="img/linkedin-brands.svg" class="linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="flex-item">
+            <div class="container">
+                <div class="filtro"></div>
+                <div class="pad green" id="green"></div>
+                <div class="pad red" id="red"></div>
+                <div class="pad yellow" id="yellow"></div>
+                <div class="pad blue" id="blue"></div>
+                <div class="display"></div>
+            </div>
+        </div>
+        <div class="info">
+            <label for="score">Pontuação<div class="info-conteudo pontos" id="score">0</div></label>
+            <label for="timing">Timer<div class="info-conteudo timer" id="timing">0</div></label>
+            <label for="game-mode">Modo de jogo<div class="info-conteudo modo-de-jogo" id="game-mode">Não definido</div></label>
+            <label for="difficulty">Dificuldade<div class="info-conteudo dificuldade" id="difficulty">Não definido</div></label>
+            <button type="button" id="play" class="play_button" onclick="start_game();">Jogar</button>
+            <button type="button" id="end-strict" onclick="end_strict();" class="end_button inativo">Encerrar Strict</button>
+        </div>
+    </div>
+    <script src="js/class.js"></script>
+    <script src="js/callback.js"></script>
+    <script src="js/function.js"></script>
+    <script src="js/structure.js"></script>
+
+</body>
+</html>
