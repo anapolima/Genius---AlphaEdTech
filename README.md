@@ -30,3 +30,8 @@ O jogador vence quando consegue repetir toda a sequência corretamente em sua qu
   No modo estrito, quando o jogador erra a sequência, ela se repete até que o jogador a faça corretamente.
   
  
+
+## Equipe de desenvolvimento
+Ana Paula Oliveira, https://github.com/anapolima<br/>
+Diego Novaes, https://github.com/D-nDev<br/>
+Tiago Ribeido, https://github.com/TiagoRR2
