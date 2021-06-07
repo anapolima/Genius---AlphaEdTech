@@ -34,4 +34,4 @@ O jogador vence quando consegue repetir toda a sequência corretamente em sua qu
 ## Equipe de desenvolvimento
 Ana Paula Oliveira, https://github.com/anapolima<br/>
 Diego Novaes, https://github.com/D-nDev<br/>
-Tiago Ribeido, https://github.com/TiagoRR2
+Tiago Ribeiro, https://github.com/TiagoRR2
