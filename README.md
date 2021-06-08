@@ -2,7 +2,15 @@
 
 Jogo Gênius com temática do Super Mário World desenvolvido em 10 dias para um desafio de jogos. <br/>
 
-O jogo foi desenvolvido utilizando HTML, CSS e JavaScript Vanilla durante os primeiros contatos do grupo com Classes.
+## Tecnologias utilizadas
+O jogo foi desenvolvido durante os primeiros contatos do grupo com Classes.
+
+
+<div style="display: inline-flex"><br>
+  <img align="center" title="JavaScript" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" title="HTML5" alt="HTML5" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" title="CSS3" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+</div>
 
 ## Sobre o jogo
 
